@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Banda Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <h1>📊 Dashboard Banda Transportadora Inteligente</h1>
+
+    <div class="grid">
+
+        <!-- ESTADO GENERAL -->
+        <div class="card">
+            <h2>Estado de la Banda</h2>
+            <p>Motor: <span id="estadoMotor">---</span></p>
+            <p>Velocidad: <span id="velocidad">0</span></p>
+            <p>Servo: <span id="servo">0</span>°</p>
+        </div>
+
+        <!-- OBJETOS -->
+        <div class="card">
+            <h2>Conteo Actual</h2>
+            <p>Pequeños: <span id="peqActual">0</span></p>
+            <p>Grandes: <span id="graActual">0</span></p>
+            <p>Total: <span id="totalObj">0</span></p>
+        </div>
+
+        <!-- EMERGENCIA -->
+        <div class="card emergencia" id="estadoEmerg">
+            <h2>Paro de Emergencia</h2>
+            <p id="emergenciaTxt">---</p>
+        </div>
+
+        <!-- GRAFICA -->
+        <div class="card wide">
+            <h2>Objetos Detectados</h2>
+            <canvas id="graficaObjetos" height="150"></canvas>
+        </div>
+
+        <!-- TABLA CAJAS -->
+        <div class="card wide">
+            <h2>Últimas Cajas Llenadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Cantidad</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaCajas"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
